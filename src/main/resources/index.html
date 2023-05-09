@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Голосование</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Голосование</h1>
+<form action="submit.jsp" method="post">
+    <label for="best_artist">Лучший исполнитель:</label>
+    <select id="best_artist" name="best_artist">
+        <option value="adele">Adele</option>
+        <option value="ed_sheeran">Ed Sheeran</option>
+        <option value="taylor_swift">Taylor Swift</option>
+        <option value="ariana_grande">Ariana Grande</option>
+    </select>
+    <br>
+    <label for="fav_genres">Ваши любимые жанры (3-5):</label>
+    <br>
+    <input type="checkbox" name="fav_genres[]" value="pop"> Поп
+    <input type="checkbox" name="fav_genres[]" value="rock"> Рок
+    <input type="checkbox" name="fav_genres[]" value="hip_hop"> Хип-хоп
+    <input type="checkbox" name="fav_genres[]" value="jazz"> Джаз
+    <input type="checkbox" name="fav_genres[]" value="blues"> Блюз
+    <input type="checkbox" name="fav_genres[]" value="country"> Кантри
+    <input type="checkbox" name="fav_genres[]" value="electronic"> Электроника
+    <input type="checkbox" name="fav_genres[]" value="classical"> Классика
+    <input type="checkbox" name="fav_genres[]" value="reggae"> Регги
+    <input type="checkbox" name="fav_genres[]" value="folk"> Фолк
+    <br>
+    <label for="about_you">Краткий текст о вас:</label>
+    <br>
+    <textarea id="about_you" name="about_you"></textarea>
+    <br>
+    <input type="submit" value="Голосовать">
+</form>
+<h2>Результаты голосования</h2>
+<h3>Лучший исполнитель:</h3>
+<%-- здесь будет вывод списка исполнителей с количеством голосов --%>
+<h3>Любимые жанры:</h3>
+<%-- здесь будет вывод списка жанров с количеством голосов --%>
+<h3>Краткий текст:</h3>
+<%-- здесь будет вывод списка кратких текстов с датой отправки --%>
+</body>
+</html>

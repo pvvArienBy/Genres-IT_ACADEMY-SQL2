@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"by.it_academy.jd2.Mk_JD2_98_23"}];updateSearchResults();

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"by.it_academy.jd2.Mk_JD2_98_23","l":"Main"}];updateSearchResults();

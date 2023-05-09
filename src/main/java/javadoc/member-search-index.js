@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"by.it_academy.jd2.Mk_JD2_98_23","c":"Main","l":"inc(int)"},{"p":"by.it_academy.jd2.Mk_JD2_98_23","c":"Main","l":"Main()","u":"%3Cinit%3E()"},{"p":"by.it_academy.jd2.Mk_JD2_98_23","c":"Main","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();
