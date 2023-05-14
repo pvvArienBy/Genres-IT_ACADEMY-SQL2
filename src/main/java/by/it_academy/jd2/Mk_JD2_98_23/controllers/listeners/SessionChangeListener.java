@@ -1,4 +1,4 @@
-package by.it_academy.jd2.Mk_JD2_98_23.web;
+package by.it_academy.jd2.Mk_JD2_98_23.controllers.listeners;
 
 import jakarta.servlet.http.HttpSessionAttributeListener;
 import jakarta.servlet.http.HttpSessionBindingEvent;
