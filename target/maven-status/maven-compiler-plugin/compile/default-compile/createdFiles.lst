@@ -8,6 +8,7 @@ by\it_academy\jd2\Mk_JD2_98_23\core\dto\GenreCreateDTO.class
 by\it_academy\jd2\Mk_JD2_98_23\web\VoteServlet.class
 by\it_academy\jd2\Mk_JD2_98_23\core\dto\VoteDTO.class
 by\it_academy\jd2\Mk_JD2_98_23\dao\api\IArtistDao.class
+by\it_academy\jd2\Mk_JD2_98_23\web\SessionChangeListener.class
 by\it_academy\jd2\Mk_JD2_98_23\dao\memory\GenreMemoryDao.class
 by\it_academy\jd2\Mk_JD2_98_23\service\factory\VoteServiceFactory.class
 by\it_academy\jd2\Mk_JD2_98_23\web\NewServletSession.class

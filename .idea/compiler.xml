@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Mk-JD2-98-23_nojspfinal" />
         <module name="Mk-JD2-98-23" />
+        <module name="task03" />
       </profile>
     </annotationProcessing>
   </component>
