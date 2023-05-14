@@ -7,6 +7,6 @@ public class SessionChangeListener implements HttpSessionAttributeListener {
 
     @Override
     public void attributeAdded(HttpSessionBindingEvent event) {
-        System.out.println();
+        System.out.println("У вас новый атрибут: " + event.getName());
     }
 }
