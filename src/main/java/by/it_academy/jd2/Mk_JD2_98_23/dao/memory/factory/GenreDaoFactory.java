@@ -1,7 +1,7 @@
 package by.it_academy.jd2.Mk_JD2_98_23.dao.memory.factory;
 
 import by.it_academy.jd2.Mk_JD2_98_23.dao.api.IGenreDao;
-import by.it_academy.jd2.Mk_JD2_98_23.dao.memory.GenreMemoryDao;
+import by.it_academy.jd2.Mk_JD2_98_23.dao.memory.GenrePostgresDao;
 
 public class GenreDaoFactory {
     private static volatile  IGenreDao instance;
@@ -13,7 +13,7 @@ public class GenreDaoFactory {
         if (instance == null)  {
             synchronized (GenreDaoFactory.class) {
                 if (instance == null) {
-                    instance = new GenreMemoryDao();
+                    instance = new GenrePostgresDao();
                 }
             }
 

@@ -22,6 +22,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 
 @WebServlet(urlPatterns = "/vote")
@@ -43,11 +44,15 @@ public class VoteServlet extends HttpServlet {
     }
 
 
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         List<GenreDTO> genres = genreService.get();
         List<ArtistDTO> artists = artistService.get();
+
+
 
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
@@ -96,6 +101,8 @@ public class VoteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
 
         /**
          * Settings Encoding
