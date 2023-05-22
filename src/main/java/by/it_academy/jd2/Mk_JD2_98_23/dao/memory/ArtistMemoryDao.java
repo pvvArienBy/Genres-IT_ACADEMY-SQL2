@@ -28,7 +28,7 @@ public class ArtistMemoryDao implements IArtistDao {
             artists.put(dto.getId(), dto);
         }
         {
-            ArtistDTO  dto = new ArtistDTO(4, "R.Miles");
+            ArtistDTO  dto = new ArtistDTO(4, "mas");
             artists.put(dto.getId(), dto);
         }
     }
