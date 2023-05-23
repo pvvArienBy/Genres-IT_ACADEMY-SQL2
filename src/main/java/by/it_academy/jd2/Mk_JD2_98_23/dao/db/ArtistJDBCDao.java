@@ -20,7 +20,7 @@ public class ArtistJDBCDao implements IArtistDao {
 
         try (Connection conn = DatabaseConnectionFactory.getConnection();
              Statement st = conn.createStatement();
-             ResultSet rs = st.executeQuery("SELECT id, name FROM app.artists ORDER BY id ASC");) {
+             ResultSet rs = st.executeQuery("SELECT id, name FROM app.artists ORDER BY id ASC")) {
 
             while (rs.next()) {
                 ArtistDTO dto = new ArtistDTO();
@@ -40,7 +40,7 @@ public class ArtistJDBCDao implements IArtistDao {
         ArtistDTO dto = null;
         try (Connection conn = DatabaseConnectionFactory.getConnection();
              Statement st = conn.createStatement();
-             ResultSet rs = st.executeQuery("SELECT id, name FROM app.artists WHERE id = " + id + " ORDER BY id ASC");) {
+             ResultSet rs = st.executeQuery("SELECT id, name FROM app.artists WHERE id = " + id + " ORDER BY id ASC")) {
 
             if (rs.next()) {
                 dto = new ArtistDTO();
@@ -58,7 +58,7 @@ public class ArtistJDBCDao implements IArtistDao {
     public ArtistDTO save(ArtistDTO item) {
         try (Connection conn = DatabaseConnectionFactory.getConnection();
              Statement st = conn.createStatement();
-             ResultSet rs = st.executeQuery("INSERT INTO app.artists(name) VALUES ('" + item.getName() + "') RETURNING id;");) {
+             ResultSet rs = st.executeQuery("INSERT INTO app.artists(name) VALUES ('" + item.getName() + "') RETURNING id;")) {
 
             while (rs.next()) {
                 item.setId(rs.getInt("id"));
