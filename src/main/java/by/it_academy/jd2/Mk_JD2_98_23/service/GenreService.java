@@ -27,15 +27,7 @@ public class GenreService implements IGenreService {
 
     @Override
     public GenreDTO save(GenreCreateDTO item) {
-
-        int maxCurrentId = this.get()
-                .stream()
-                .mapToInt(GenreDTO::getId)
-                .max()
-                .orElseThrow();
-
         GenreDTO dto = new GenreDTO();
-        dto.setId(maxCurrentId + 1);
         dto.setName(item.getName());
 
         return genreDao.save(dto);

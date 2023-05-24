@@ -32,4 +32,11 @@ public class ArtistDTO {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "ArtistDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

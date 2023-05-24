@@ -57,13 +57,15 @@ public class ArtistJDBCDao implements IArtistDao {
     @Override
     public ArtistDTO save(ArtistDTO item) {
         try (Connection conn = DatabaseConnectionFactory.getConnection();
-             Statement st = conn.createStatement();
-             ResultSet rs = st.executeQuery("INSERT INTO app.artists(name) VALUES ('" + item.getName() + "') RETURNING id;")) {
+             PreparedStatement st = conn.prepareStatement("INSERT INTO app.artists(name) VALUES (?) RETURNING id;")) {
 
-            while (rs.next()) {
-                item.setId(rs.getInt("id"));
+            st.setString(1, item.getName());
+
+            try (ResultSet rs = st.executeQuery()) {
+                while (rs.next()) {
+                    item.setId(rs.getInt("id"));
+                }
             }
-
         } catch (SQLException e) {
             throw new AccessDataException("Ошибка подключения к базе данных", e);
         }

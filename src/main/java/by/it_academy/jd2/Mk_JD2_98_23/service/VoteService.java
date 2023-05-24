@@ -9,7 +9,6 @@ import by.it_academy.jd2.Mk_JD2_98_23.service.api.IGenreService;
 import by.it_academy.jd2.Mk_JD2_98_23.service.api.IVoteService;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -49,21 +48,7 @@ public class VoteService implements IVoteService {
     @Override
     public VoteDTO save(VoteCreateDTO createDTO) {
         validate(createDTO);
-
-        int maxCurrentId = 0;
-        if (this.get().size() == 0) {
-            maxCurrentId = 1;
-        } else {
-            maxCurrentId = this.get()
-                    .stream()
-                    .mapToInt(VoteDTO::getId)
-                    .max()
-                    .orElseThrow();
-        }
-
-
         VoteDTO dto = new VoteDTO();
-        dto.setId(maxCurrentId + 1);
         dto.setArtist(createDTO.getArtist());
         dto.setGenres(createDTO.getGenres());
         dto.setAbout(createDTO.getAbout());

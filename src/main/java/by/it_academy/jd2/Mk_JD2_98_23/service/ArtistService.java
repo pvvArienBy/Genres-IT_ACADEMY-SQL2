@@ -28,15 +28,7 @@ public class ArtistService implements IArtistService {
 
     @Override
     public ArtistDTO save(ArtistCreateDTO item) {
-
-        int maxCurrentId = this.get()
-                .stream()
-                .mapToInt(ArtistDTO::getId)
-                .max()
-                .orElseThrow();
-
         ArtistDTO dto = new ArtistDTO();
-        dto.setId(maxCurrentId + 1);
         dto.setName(item.getName());
 
         return artistDao.save(dto);
