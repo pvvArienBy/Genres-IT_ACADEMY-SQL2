@@ -4,6 +4,7 @@ import by.it_academy.jd2.Mk_JD2_98_23.core.dto.ArtistCreateDTO;
 import by.it_academy.jd2.Mk_JD2_98_23.core.dto.ArtistDTO;
 import by.it_academy.jd2.Mk_JD2_98_23.service.api.IArtistService;
 import by.it_academy.jd2.Mk_JD2_98_23.service.factory.ArtistServiceFactory;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,26 +19,25 @@ import java.util.List;
 @WebServlet(urlPatterns = "/artist")
 public class ArtistServlet extends HttpServlet {
     private final IArtistService artistService;
+    private ObjectMapper objectMapper;
+
 
 
     public ArtistServlet() {
         this.artistService = ArtistServiceFactory.getInstance();
+        this.objectMapper = new ObjectMapper();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setCharacterEncoding("UTF-8");
-        resp.setContentType("text/html; charset=UTF-8");
-
 
         PrintWriter writer = resp.getWriter();
+
         List<ArtistDTO> artistDTOS = this.artistService.get();
-
-
-        artistDTOS.forEach(g -> {
-            writer.write(g.getId() + " - " + g.getName() + "</br>");
-        });
+        
+        writer.write(objectMapper.writeValueAsString(artistDTOS));
     }
 
 
